@@ -1,0 +1,160 @@
+@use '../../styles/variables' as *;
+
+.projects {
+  background: $light-surface;
+  @include dark {
+    background: $dark-surface;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+
+  @include respond($bp-tablet) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: $light-bg;
+  border: 1px solid $light-border;
+  border-radius: $border-radius;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition-fast, border-color $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: $light-accent;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  @include dark {
+    background: $dark-bg;
+    border-color: $dark-border;
+
+    &:hover {
+      border-color: $dark-accent;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #f1f5f9;
+  overflow: hidden;
+
+  @include dark {
+    background: #1a1f2e;
+  }
+}
+
+.cardImage {
+  object-fit: contain;
+  object-position: center;
+  padding: 1rem;
+}
+
+.content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+
+  @include respond($bp-mobile) {
+    padding: 1.25rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: $light-accent;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  align-self: flex-start;
+
+  @include dark {
+    background: $dark-accent;
+    color: $dark-bg;
+  }
+}
+
+.title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: $light-text-secondary;
+  line-height: 1.65;
+  flex: 1;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  background: $light-tag-bg;
+  color: $light-tag-text;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 500;
+
+  @include dark {
+    background: $dark-tag-bg;
+    color: $dark-tag-text;
+  }
+}
+
+.links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.link {
+  font-size: 0.83rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid $light-border;
+  border-radius: $border-radius-sm;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $light-accent;
+    background: $light-tag-bg;
+  }
+
+  @include dark {
+    border-color: $dark-border;
+    &:hover {
+      border-color: $dark-accent;
+      background: $dark-tag-bg;
+    }
+  }
+}

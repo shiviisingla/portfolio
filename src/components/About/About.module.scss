@@ -1,0 +1,133 @@
+@use '../../styles/variables' as *;
+
+.about {
+  background: $light-surface;
+  @include dark {
+    background: $dark-surface;
+  }
+}
+
+.bio {
+  font-size: 1.05rem;
+  color: $light-text-secondary;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  max-width: 720px;
+  word-break: break-word;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+
+  @include respond($bp-mobile) {
+    font-size: 0.95rem;
+  }
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.techTag {
+  padding: 0.35rem 0.85rem;
+  background: $light-tag-bg;
+  color: $light-tag-text;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  @include dark {
+    background: $dark-tag-bg;
+    color: $dark-tag-text;
+  }
+}
+
+// Stats row — horizontal, compact
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: $light-bg;
+  border: 1px solid $light-border;
+  border-radius: $border-radius;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  flex: 1 1 140px;
+  min-width: 120px;
+  transition: transform $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $light-accent;
+  }
+
+  @include dark {
+    background: $dark-bg;
+    border-color: $dark-border;
+    &:hover {
+      border-color: $dark-accent;
+    }
+  }
+
+  @include respond($bp-mobile) {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 0;
+    padding: 0.75rem 1rem;
+  }
+}
+
+.statValue {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: $light-accent;
+  line-height: 1;
+
+  @include dark {
+    color: $dark-accent;
+  }
+}
+
+.statLabel {
+  font-size: 0.78rem;
+  color: $light-text-secondary;
+  margin-top: 0.3rem;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+// Skills — compact inline rows
+.skillsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skillRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.skillLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: $light-text-secondary;
+  font-weight: 700;
+  margin-right: 0.4rem;
+  white-space: nowrap;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}

@@ -1,0 +1,185 @@
+@use '../../styles/variables' as *;
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: $light-surface;
+  border: 1px solid $light-border;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  transition: transform $transition-fast, border-color $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    border-color: $light-accent;
+  }
+
+  @include dark {
+    background: $dark-surface;
+    border-color: $dark-border;
+    &:hover {
+      border-color: $dark-accent;
+    }
+  }
+
+  @include respond($bp-mobile) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.logo {
+  border-radius: $border-radius-sm;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.degree {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.institution {
+  font-size: 0.95rem;
+  color: $light-accent;
+  font-weight: 500;
+
+  @include dark {
+    color: $dark-accent;
+  }
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: $light-text-secondary;
+  margin-top: 0.2rem;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+.subsection {
+  margin-top: 3rem;
+}
+
+.subsectionTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.certList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.certItem {
+  background: $light-surface;
+  border: 1px solid $light-border;
+  border-radius: $border-radius-sm;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @include dark {
+    background: $dark-surface;
+    border-color: $dark-border;
+  }
+
+  @include respond($bp-mobile) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.certInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+
+  @include respond($bp-mobile) {
+    align-items: center;
+  }
+}
+
+.certName {
+  font-weight: 600;
+  font-size: 0.95rem;
+
+  a {
+    color: inherit;
+    &:hover {
+      color: $light-accent;
+      @include dark {
+        color: $dark-accent;
+      }
+    }
+  }
+}
+
+.certProvider {
+  font-size: 0.85rem;
+  color: $light-text-secondary;
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+.certImage {
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.certLink {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid $light-border;
+  border-radius: 4px;
+  transition: all $transition-fast;
+
+  &:hover {
+    border-color: $light-accent;
+    background: $light-tag-bg;
+  }
+
+  @include dark {
+    border-color: $dark-border;
+    &:hover {
+      border-color: $dark-accent;
+      background: $dark-tag-bg;
+    }
+  }
+}
+
+.achieveItem {
+  background: $light-surface;
+  border: 1px solid $light-border;
+  border-radius: $border-radius-sm;
+  padding: 1rem 1.25rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  @include dark {
+    background: $dark-surface;
+    border-color: $dark-border;
+  }
+}
+
+.trophy {
+  font-size: 1.3rem;
+}

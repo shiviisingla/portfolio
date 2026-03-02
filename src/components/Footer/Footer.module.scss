@@ -1,0 +1,50 @@
+@use '../../styles/variables' as *;
+
+.footer {
+  padding: 2.5rem 0 2rem;
+  text-align: center;
+  border-top: 1px solid $light-border;
+
+  @include dark {
+    border-top-color: $dark-border;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.footerLink {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: $light-text-secondary;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $light-accent;
+  }
+
+  @include dark {
+    color: $dark-text-secondary;
+    &:hover {
+      color: $dark-accent;
+    }
+  }
+}
+
+.copy {
+  font-size: 0.85rem;
+  color: $light-text-secondary;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+.heart {
+  color: #ef4444;
+}

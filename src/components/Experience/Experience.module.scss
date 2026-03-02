@@ -1,0 +1,126 @@
+@use '../../styles/variables' as *;
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: $light-border;
+
+    @include dark {
+      background: $dark-border;
+    }
+  }
+
+  @include respond($bp-mobile) {
+    padding-left: 1.5rem;
+  }
+}
+
+.item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 1.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: $light-accent;
+    border: 2px solid $light-bg;
+
+    @include dark {
+      background: $dark-accent;
+      border-color: $dark-bg;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include respond($bp-mobile) {
+    padding-left: 1rem;
+
+    &::before {
+      left: -1.5rem;
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+
+  @include respond($bp-mobile) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.logo {
+  border-radius: $border-radius-sm;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.headerText {
+  flex: 1;
+}
+
+.role {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.company {
+  font-size: 0.95rem;
+  color: $light-accent;
+  font-weight: 500;
+
+  @include dark {
+    color: $dark-accent;
+  }
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: $light-text-secondary;
+  margin-top: 0.15rem;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}
+
+.bullets {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.bullet {
+  font-size: 0.95rem;
+  color: $light-text-secondary;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  list-style: disc;
+
+  @include dark {
+    color: $dark-text-secondary;
+  }
+}

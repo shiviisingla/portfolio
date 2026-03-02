@@ -1,0 +1,123 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  overflow-x: hidden;
+}
+
+body {
+  background: $light-bg;
+  color: $light-text;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background $transition-base, color $transition-base;
+  overflow-x: hidden;
+}
+
+[data-theme='dark'] body {
+  background: $dark-bg;
+  color: $dark-text;
+}
+
+a {
+  color: $light-accent;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $light-accent-hover;
+  }
+
+  [data-theme='dark'] & {
+    color: $dark-accent;
+    &:hover {
+      color: $dark-accent-hover;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  @media (max-width: $bp-mobile) {
+    padding: 0 1rem;
+  }
+}
+
+.section {
+  padding: $section-padding;
+  padding-top: calc(64px + 3rem);
+
+  @media (max-width: $bp-mobile) {
+    padding: 3rem 0;
+    padding-top: calc(64px + 2rem);
+  }
+}
+
+.section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: $bp-mobile) {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: $light-accent;
+    border-radius: 2px;
+
+    [data-theme='dark'] & {
+      background: $dark-accent;
+    }
+  }
+}
+
+::selection {
+  background: $light-accent;
+  color: #fff;
+
+  [data-theme='dark'] & {
+    background: $dark-accent;
+    color: $dark-bg;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid $light-accent;
+  outline-offset: 2px;
+
+  [data-theme='dark'] & {
+    outline-color: $dark-accent;
+  }
+}

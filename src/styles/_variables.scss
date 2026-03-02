@@ -1,0 +1,54 @@
+// Colors - Light
+$light-bg: #fafafa;
+$light-surface: #ffffff;
+$light-text: #1a1a2e;
+$light-text-secondary: #555570;
+$light-accent: #2563eb;
+$light-accent-hover: #1d4ed8;
+$light-border: #e2e8f0;
+$light-card: #ffffff;
+$light-tag-bg: #eff6ff;
+$light-tag-text: #1e40af;
+
+// Colors - Dark
+$dark-bg: #0f0f1a;
+$dark-surface: #1a1a2e;
+$dark-text: #e2e8f0;
+$dark-text-secondary: #94a3b8;
+$dark-accent: #60a5fa;
+$dark-accent-hover: #93bbfc;
+$dark-border: #2d2d44;
+$dark-card: #1e1e32;
+$dark-tag-bg: #1e293b;
+$dark-tag-text: #93c5fd;
+
+// Typography
+$font-mono: 'Fira Code', 'JetBrains Mono', monospace;
+
+// Spacing
+$section-padding: 5rem 0;
+$container-width: 1100px;
+$border-radius: 10px;
+$border-radius-sm: 6px;
+
+// Transitions
+$transition-fast: 0.2s ease;
+$transition-base: 0.3s ease;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// Mixins
+@mixin respond($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin dark {
+  [data-theme='dark'] & {
+    @content;
+  }
+}
